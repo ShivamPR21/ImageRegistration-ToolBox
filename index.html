@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>PCA analysis</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link
+        href="./static/bootstrap/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
 </head>
 
 <!-- Font Awesome -->
@@ -16,195 +20,72 @@
   href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
   rel="stylesheet"
 />
-<!-- MDB -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
-  rel="stylesheet"
-/>
+<!-- [> MDB <] -->
+<!-- <link -->
+<!--   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" -->
+<!--   rel="stylesheet" -->
+<!-- /> -->
+<!--  -->
+<!-- [> MDB <] -->
+<!-- <script -->
+<!--   type="text/javascript" -->
+<!--   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js" -->
+<!-- ></script> -->
 
-<!-- MDB -->
+<!-- Bootstrap -->
+
 <script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
+    href="./static/bootstrap/js/bootstrap.min.js"
 ></script>
+<!-- Bootstrap -->
 
-<style>
-body {
-  background-image: url('./assets/background.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
+<!-- Main page JS and CSS -->
+<style
+    href="./static/css/init.css">
 </style>
+<!--  -->
+<script
+    type="text/javascript"
+    href="./static/js/init.js"
+></script>
+<!-- Main page JS and CSS -->
+
 <body>
-<div class="container-fluid align-items-center">
-  <div class="row align-items-start">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <!-- Container wrapper -->
-      <div class="container-fluid">
-        <!-- Navbar brand -->
-        <a class="navbar-brand" href="#">PCA analysis</a>
-
-        <!-- Toggle button -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-mdb-toggle="collapse"
-          data-mdb-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Left links -->
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <!-- Navbar dropdown -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <!-- Dropdown menu -->
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-                >Disabled</a
-              >
-            </li>
-          </ul>
-          <!-- Left links -->
-
-          <!-- Search form -->
-          <form class="d-flex input-group w-auto">
-            <input
-              type="search"
-              class="form-control"
-              placeholder="Type query"
-              aria-label="Search"
-            />
-            <button
-              class="btn btn-outline-primary"
-              type="button"
-              data-mdb-ripple-color="dark"
-            >
-              Search
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <!-- Navbar content -->
+        <div class="container-fluid">
+            <a class="navbar-brand" 
+                href="./index.html"
+                >PCA
+            </a>
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarText" 
+                aria-controls="navbarText" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-          </form>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+            </div>
         </div>
-        <!-- Collapsible wrapper -->
-      </div>
-      <!-- Container wrapper -->
     </nav>
-  </div>
-
-  <div class="row align-items-center">
-    <form>
-    <div class="form-outline">
-      <input type="text" id="form1" class="form-control" />
-      <label class="form-label" for="form1">Example label</label>
-    </div>
-    </form>
-  </div>
-
-  <!-- Containter bottom -->
-  <div class="row align-items-end">
-    <footer class="bg-light text-center text-white">
-      <!-- Grid container -->
-      <div class="container p-4 pb-0">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-          <!-- Facebook -->
-          <!-- <a -->
-          <!--   class="btn btn-primary btn-floating m-1" -->
-          <!--   style="background-color: #3b5998;" -->
-          <!--   href="#!" -->
-          <!--   role="button" -->
-          <!--   ><i class="fab fa-facebook-f"></i -->
-          <!-- ></a> -->
-    
-          <!-- Twitter -->
-          <!-- <a -->
-          <!--   class="btn btn-primary btn-floating m-1" -->
-          <!--   style="background-color: #55acee;" -->
-          <!--   href="#!" -->
-          <!--   role="button" -->
-          <!--   ><i class="fab fa-twitter"></i -->
-          <!-- ></a> -->
-    
-          <!-- Google -->
-          <a
-            class="btn btn-primary btn-floating m-1"
-            style="background-color: #dd4b39;"
-            href="pandeyshivam2017robotics@gmail.com"
-            role="button"
-            ><i class="fab fa-google"></i
-          ></a>
-    
-          <!-- Instagram -->
-          <!-- <a -->
-          <!--   class="btn btn-primary btn-floating m-1" -->
-          <!--   style="background-color: #ac2bac;" -->
-          <!--   href="#!" -->
-          <!--   role="button" -->
-          <!--   ><i class="fab fa-instagram"></i -->
-          <!-- ></a> -->
-    
-          <!-- Linkedin -->
-          <a
-            class="btn btn-primary btn-floating m-1"
-            style="background-color: #0082ca;"
-            href="https://www.linkedin.com/in/shivam-pandey-b6572a153/"
-            role="button"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <!-- Github -->
-          <a
-            class="btn btn-primary btn-floating m-1"
-            style="background-color: #333333;"
-            href="https://github.com/ShivamPR21"
-            role="button"
-            ><i class="fab fa-github"></i
-          ></a>
-        </section>
-        <!-- Section: Social media -->
-      </div>
-      <!-- Grid container -->
-    
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2021 Copyright:
-        <a class="text-white" href="https://shivampr21.github.io/">Shivam Pandey</a>
-      </div>
-      <!-- Copyright -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">Place sticky footer content here.</span>
+        </div>
     </footer>
-  </div>
-</div>
 </body>
 
 </html>
