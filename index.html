@@ -4,53 +4,59 @@
     <meta charset="UTF-8">
     <title>PCA analysis</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- [> MDB <] -->
+    <!-- <link -->
+    <!--   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" -->
+    <!--   rel="stylesheet" -->
+    <!-- /> -->
+    <!--  -->
+    <!-- [> MDB <] -->
+    <!-- <script -->
+    <!--   type="text/javascript" -->
+    <!--   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js" -->
+    <!-- ></script> -->
+
+    <!-- Bootstrap -->
     <link
         href="./static/bootstrap/css/bootstrap.min.css"
         rel="stylesheet"
     />
-</head>
 
-<!-- Font Awesome -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-  rel="stylesheet"
-/>
-<!-- Google Fonts -->
-<link
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-  rel="stylesheet"
-/>
-<!-- [> MDB <] -->
-<!-- <link -->
-<!--   href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" -->
-<!--   rel="stylesheet" -->
-<!-- /> -->
-<!--  -->
-<!-- [> MDB <] -->
-<!-- <script -->
-<!--   type="text/javascript" -->
-<!--   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js" -->
-<!-- ></script> -->
-
-<!-- Bootstrap -->
-
-<script
+    <script
     href="./static/bootstrap/js/bootstrap.min.js"
-></script>
-<!-- Bootstrap -->
+    ></script>
+    <!-- Bootstrap -->
 
-<!-- Main page JS and CSS -->
-<style
-    href="./static/css/init.css">
-</style>
-<!--  -->
-<script
+    <!-- Main page JS and CSS -->
+    <link
+    href="./static/css/init.css"
+    rel="stylesheet"
+    />
+    <!-- <style
+    href="./static/css/init.css"
+    rel="stylesheet">
+    </style> -->
+    <!--  -->
+    <script
     type="text/javascript"
     href="./static/js/init.js"
-></script>
-<!-- Main page JS and CSS -->
+    ></script>
+    <!-- Main page JS and CSS -->
+</head>
 
-<body>
+<body class="container-sm-6 align-items-center">
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <!-- Navbar content -->
         <div class="container-fluid">
@@ -81,11 +87,33 @@
             </div>
         </div>
     </nav>
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
+
+    <div class="row g-4 d-flex align-items-center justify-content-around flex-fill flex-row">
+        <div class="col-sm-6 align-items-center d-flex flex-row justify-content-center flex-fill">
+            <div class="card align-items-center d-inline-flex flex-column justify-content-center" style="width:18rem;">
+                <img src="./assets/pca.png" class="card-img-top" alt="..." style="width:50%;height:50%;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 align-items-center d-flex flex-row justify-content-center flex-fill">
+            <div class="card align-items-center d-inline-flex flex-column justify-content-center" style="width:18rem;">
+                <img src="./assets/irtb.png" class="card-img-top" alt="..." style="width:50%;height:50%;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footermt-auto py-3 bg-light fixed-bottom">
+        <div class="container d-flex flex-row justify-content-center">
+            <span class="text-muted">(C) 2021 Shivam Pandey</span>
         </div>
     </footer>
 </body>
-
 </html>
+
