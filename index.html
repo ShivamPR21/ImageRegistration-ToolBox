@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>PCA analysis</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    
+    <base href="./" />
+
     <!-- Font Awesome -->
     <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -55,14 +56,14 @@
     <!-- Main page JS and CSS -->
 </head>
 
-<body class="container-sm-6 align-items-center">
+<body>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <!-- Navbar content -->
         <div class="container-fluid">
             <a class="navbar-brand" 
                 href="./index.html"
-                >PCA
+                >ImageProcessing-Toolbox
             </a>
             <button 
                 class="navbar-toggler" 
@@ -88,32 +89,42 @@
         </div>
     </nav>
 
-    <div class="row g-4 d-flex align-items-center justify-content-around flex-fill flex-row">
-        <div class="col-sm-6 align-items-center d-flex flex-row justify-content-center flex-fill">
-            <div class="card align-items-center d-inline-flex flex-column justify-content-center" style="width:18rem;">
-                <img src="./assets/pca.png" class="card-img-top" alt="..." style="width:50%;height:50%;">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <div class="container-fluid align-items-center mt-5">
+        
+        <div class="row d-flex flex-row align-items-center justify-content-around">
+            <h2 class="d-flex flex-row justify-content-center">Implemented Modules</h2>
+        </div>
+
+        <div class="row mt-5 d-flex flex-row align-items-center justify-content-around">
+            
+            <div class="col d-flex flex-row align-items-center justify-content-center">
+                <div class="card d-inline-flex flex-column align-items-center justify-content-center" style="width:18rem;">
+                    <img src="./assets/pca.png" class="card-img-top" alt="..." style="width:50%;height:50%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6 align-items-center d-flex flex-row justify-content-center flex-fill">
-            <div class="card align-items-center d-inline-flex flex-column justify-content-center" style="width:18rem;">
-                <img src="./assets/irtb.png" class="card-img-top" alt="..." style="width:50%;height:50%;">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            
+            <div class="col d-flex flex-row align-items-center justify-content-center">
+                <div class="card d-inline-flex flex-column align-items-center justify-content-center" style="width:18rem;">
+                    <img src="./assets/irtb.png" class="card-img-top" alt="..." style="width:50%;height:50%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
                 </div>
             </div>
+        
         </div>
+    
+    </div>
+    
+    <div class="jumbotron text-center fixed-bottom">
+        <p>(C) 2021 Shivam Pandey</p>
     </div>
 
-    <footer class="footermt-auto py-3 bg-light fixed-bottom">
-        <div class="container d-flex flex-row justify-content-center">
-            <span class="text-muted">(C) 2021 Shivam Pandey</span>
-        </div>
-    </footer>
 </body>
 </html>
 
