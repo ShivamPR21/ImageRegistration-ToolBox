@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}
+    PCA Analysis
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-1 text-white">PCA Analysis</h1>
+    <body class="text-center">
+    <div class="container">
+        <div class="row d-flex flex-row justify-content-center">
+            <div class="col-sm {{ shrink }}">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-sm d-flex flex-row justify-content-center">
+                        <img src="https://raw.githubusercontent.com/ShivamPR21/ImageRegistration-ToolBox/pca_app/assets/pca.png"
+                             class="img-fluid d-inline-flex"
+                             alt="Didn't found"
+                             style="width: 20%; height: 20%;"
+                        >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <form method="POST" class="" style="color:white" action="/pca">
+                            {{ form.hidden_tag() }}
+                            {#                        <div class="embed-responsive embed-responsive-4by3">#}
+                            {#                        </div>#}
+                            <h1 class="h3 mb-2 mt-1 font-weight-normal">
+                                PCA Input
+                            </h1>
+                            <br>
+                            {{ form.file_name.label() }}
+                            {{ form.file_name(class="form-control", placeholder="File path") }}
+
+                            {{ form.pca_method.label() }}
+                            {{ form.pca_method(class="form-control", placeholder="Method") }}
+
+                            <br>
+
+                            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="container">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src=" {{ url_for('static', filename='assets/pca.png') }}" class="d-block w-100"
+                                     alt="Slide 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ url_for('static', filename='assets/background.png') }}"
+                                     class="d-block w-100" alt="Slide 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ url_for('static', filename='assets/pca.png') }}" class="d-block w-100"
+                                     alt="Slide 3">
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+{% endblock %}

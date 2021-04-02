@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
+
+
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css"
+              integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q=="
+              crossorigin="anonymous"
+        />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js"
+                integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw=="
+                crossorigin="anonymous"
+        ></script>
+    {##}
+    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.esm.min.js"#}
+    {#            integrity="sha512-fBq114Wsu9Nms3lM3baGOGS9YmyCsi1F2zKwfSl2Y8X5f54IGEreb9OBoniOup3M3I60RI3X6+kjhJWB/Yv0VA=="#}
+    {#            crossorigin="anonymous"#}
+    {#    ></script>#}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"#}
+{#          integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA=="#}
+{#          crossorigin="anonymous"/>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"#}
+{#            integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg=="#}
+{#            crossorigin="anonymous"></script>#}
+    <!-- Bootstrap -->
+
+    <!-- Font Awesome -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- Main page JS and CSS -->
+    <link
+            href="{{ url_for('static' , filename='css/init.css') }}"
+            rel="stylesheet"
+    />
+    <script
+            type="text/javascript"
+            href="{{ url_for ('static', filename='/js/init.js') }}"
+    ></script>
+    <!-- Main page JS and CSS -->
+</head>
+
+<body class="bg-dark bg-gradient">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!-- Navbar content -->
+    <div class="container-fluid">
+        <a class="navbar-brand"
+           href="{{ url_for('home_page') }}"
+        >{{ app_name }}
+        </a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarText"
+                aria-controls="navbarText"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="https://github.com/ShivamPR21">
+                        <i class="fab fa-github"></i>
+                        Github
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block content %}
+
+{% endblock %}
+{#    <div class="container-fluid" style="margin-bottom:0;">#}
+
+<div class="jumbotron text-center fixed-bottom">
+    <p class="text-white">(C) 2021 Shivam Pandey</p>
+</div>
+{#    </div>#}
+
+
+</body>
+</html>
+
