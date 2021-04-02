@@ -11,27 +11,33 @@
 
 
     <!-- Bootstrap CSS -->
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css"
-              integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q=="
-              crossorigin="anonymous"
-        />
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js"
-                integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw=="
-                crossorigin="anonymous"
-        ></script>
+    {#        <link rel="stylesheet"#}
+    {#              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css"#}
+    {#              integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q=="#}
+    {#              crossorigin="anonymous"#}
+    {#        />#}
+    {##}
+    {#        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js"#}
+    {#                integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw=="#}
+    {#                crossorigin="anonymous"#}
+    {#        ></script>#}
+    <script
+            src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.js') }}"
+    ></script>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}"
+    >
     {##}
     {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.esm.min.js"#}
     {#            integrity="sha512-fBq114Wsu9Nms3lM3baGOGS9YmyCsi1F2zKwfSl2Y8X5f54IGEreb9OBoniOup3M3I60RI3X6+kjhJWB/Yv0VA=="#}
     {#            crossorigin="anonymous"#}
     {#    ></script>#}
-{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"#}
-{#          integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA=="#}
-{#          crossorigin="anonymous"/>#}
-{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"#}
-{#            integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg=="#}
-{#            crossorigin="anonymous"></script>#}
+    {#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"#}
+    {#          integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA=="#}
+    {#          crossorigin="anonymous"/>#}
+    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"#}
+    {#            integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg=="#}
+    {#            crossorigin="anonymous"></script>#}
     <!-- Bootstrap -->
 
     <!-- Font Awesome -->
