@@ -11,33 +11,12 @@
 
 
     <!-- Bootstrap CSS -->
-    {#        <link rel="stylesheet"#}
-    {#              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css"#}
-    {#              integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q=="#}
-    {#              crossorigin="anonymous"#}
-    {#        />#}
-    {##}
-    {#        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.min.js"#}
-    {#                integrity="sha512-mp3VeMpuFKbgxm/XMUU4QQUcJX4AZfV5esgX72JQr7H7zWusV6lLP1S78wZnX2z9dwvywil1VHkHZAqfGOW7Nw=="#}
-    {#                crossorigin="anonymous"#}
-    {#        ></script>#}
     <script
             src="{{ url_for('static', filename='bootstrap/js/bootstrap.bundle.js') }}"
     ></script>
     <link rel="stylesheet"
           href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}"
     >
-    {##}
-    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.esm.min.js"#}
-    {#            integrity="sha512-fBq114Wsu9Nms3lM3baGOGS9YmyCsi1F2zKwfSl2Y8X5f54IGEreb9OBoniOup3M3I60RI3X6+kjhJWB/Yv0VA=="#}
-    {#            crossorigin="anonymous"#}
-    {#    ></script>#}
-    {#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"#}
-    {#          integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA=="#}
-    {#          crossorigin="anonymous"/>#}
-    {#    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"#}
-    {#            integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg=="#}
-    {#            crossorigin="anonymous"></script>#}
     <!-- Bootstrap -->
 
     <!-- Font Awesome -->
@@ -46,10 +25,10 @@
             rel="stylesheet"
     />
     <!-- Google Fonts -->
-    <link
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-            rel="stylesheet"
-    />
+{#    <link#}
+{#            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"#}
+{#            rel="stylesheet"#}
+{#    />#}
 
     <!-- Main page JS and CSS -->
     <link
@@ -64,33 +43,23 @@
 </head>
 
 <body class="bg-dark bg-gradient">
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <!-- Navbar content -->
-    <div class="container-fluid">
-        <a class="navbar-brand"
-           href="{{ url_for('home_page') }}"
-        >{{ app_name }}
-        </a>
-        <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarText"
-                aria-controls="navbarText"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="https://github.com/ShivamPR21">
-                        <i class="fab fa-github"></i>
-                        Github
-                    </a>
-                </li>
-            </ul>
-        </div>
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-md">
+    <a href="#" class="navbar-brand">{{ app_name }}</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href=" {{ url_for('home_page') }}" class="nav-link">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                Home
+            </a></li>
+            <li class="nav-item"><a href="https://github.com/ShivamPR21" class="nav-link">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                Github
+            </a></li>
+        </ul>
     </div>
 </nav>
 
@@ -99,11 +68,16 @@
 {% endblock %}
 {#    <div class="container-fluid" style="margin-bottom:0;">#}
 
-<div class="jumbotron text-center fixed-bottom">
-    <p class="text-white">(C) 2021 Shivam Pandey</p>
+<div class="jumbotron text-center fixed-bottom bg-gradient text-white">
+        <a class="container" href="https://github.com/ShivamPR21">
+            <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a class="container" href="https://www.linkedin.com/in/shivam-pandey-b6572a153/">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+    <br>
+        <p class="text-white">(C) 2021 Shivam Pandey</p>
 </div>
-{#    </div>#}
-
 
 </body>
 </html>

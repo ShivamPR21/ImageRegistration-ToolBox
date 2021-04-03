@@ -8,7 +8,7 @@
     <body class="text-center">
     <div class="container">
         <div class="row d-flex flex-row justify-content-center">
-            <div class="col-sm {{ shrink }}">
+            <div class="col-sm {{ shrink }} collapse {{ show_form|default('show') }}">
                 <div class="row d-flex align-items-center justify-content-center">
                     <div class="col-sm d-flex flex-row justify-content-center">
                         <img src="{{ url_for('static', filename='assets/pca.png') }}"
@@ -20,17 +20,15 @@
                 </div>
                 <div class="row">
                     <div class="col text-center">
-                        <form method="POST" class="" style="color:white" action="/pca">
+                        <form action="/" method="POST" style="color:#ffffff;" enctype="multipart/form-data">
                             {{ form.hidden_tag() }}
-                            {#                        <div class="embed-responsive embed-responsive-4by3">#}
-                            {#                        </div>#}
                             <h1 class="h3 mb-2 mt-1 font-weight-normal">
                                 PCA Input
                             </h1>
                             <br>
                             {{ form.file_name.label() }}
-                            {{ form.file_name(class="form-control", placeholder="File path") }}
-
+                            {{ form.file_name(class="form-control", placeholder="file_name") }}
+                            {#(class="form-control", placeholder="file_name")#}
                             {{ form.pca_method.label() }}
                             {{ form.pca_method(class="form-control", placeholder="Method") }}
 
@@ -42,7 +40,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col-sm collapse {{ show_result|default('', true) }}"
+                 style="max-height: 500px;max-width: 500px;">
                 <div class="container">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -52,20 +51,132 @@
                                     aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                                     aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
                         </div>
 
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="{{ url_for('static', filename='assets/pca.png') }}" class="d-block w-100"
+                                <img src="{{ url_for('static', filename= pcs_path[0] ) }}"
+                                     class="d-block w-100"
                                      alt="Slide 1">
+                                <div class="collapse show" id="collapseExample">
+                                    <div class="card card-body">
+                                        <h2>
+                                            Principal Component 1
+                                        </h2>
+                                        <h3>
+                                            Eigen Value: {{ eig_val[0] }}
+                                        </h3>
+                                        <h3>
+                                            Eigen Vector: {{ eig_vec[0] }}
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ url_for('static', filename='assets/irtb.png') }}"
+                                <img src="{{ url_for('static', filename= pcs_path[1] ) }}"
                                      class="d-block w-100" alt="Slide 2">
+                                <div class="collapse show" id="collapseExample">
+                                    <div class="card card-body">
+                                        <h2>
+                                            Principal Component 2
+                                        </h2>
+                                        <h3>
+                                            Eigen Value: {{ eig_val[1] }}
+                                        </h3>
+                                        <h3>
+                                            Eigen Vector: {{ eig_vec[1] }}
+                                        </h3>
+                                    </div>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="{{ url_for('static', filename='assets/pca.png') }}" class="d-block w-100"
+                                <img src="{{ url_for('static', filename= pcs_path[2] ) }}"
+                                     class="d-block w-100"
                                      alt="Slide 3">
+                                <div class="collapse show" id="collapseExample">
+                                    <div class="card card-body">
+                                        <h2>
+                                            Principal Component 3
+                                        </h2>
+                                        <h3>
+                                            Eigen Value: {{ eig_val[2] }}
+                                        </h3>
+                                        <h3>
+                                            Eigen Vector: {{ eig_vec[2] }}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ url_for('static', filename= pcs_path[3] ) }}"
+                                     class="d-block w-100"
+                                     alt="Slide 4">
+                                <div class="collapse show" id="collapseExample">
+                                    <div class="card card-body">
+                                        <h2>
+                                            Principal Component 4
+                                        </h2>
+                                        <h3>
+                                            Eigen Value: {{ eig_val[3] }}
+                                        </h3>
+                                        <h3>
+                                            Eigen Vector: {{ eig_vec[3] }}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm collapse {{ show_result|default('', true) }}"
+                 style="max-height: 500px;max-width: 500px;">
+                <div class="container">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{{ url_for('static', filename= covar_path ) }}"
+                                     class="d-block w-100"
+                                     alt="Slide 1">
+                                <div class="collapse show" id="collapseExample">
+                                    <div class="card card-body">
+                                        <h2>
+                                            Feature Vector Plot
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{{ url_for('static', filename= pcs_covar_path ) }}"
+                                     class="d-block w-100" alt="Slide 2">
+                                <div class="collapse show" id="collapseExample">
+                                    <div class="card card-body">
+                                        <h2>
+                                            Principal Components Plots
+                                        </h2>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

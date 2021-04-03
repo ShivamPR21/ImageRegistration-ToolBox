@@ -1,11 +1,17 @@
 from flask_wtf import FlaskForm
-from wtforms import SelectField, FileField, SubmitField
+from flask_wtf.file import FileField, FileRequired
+from wtforms import SelectField, SubmitField
 
 
 class RegisterForm(FlaskForm):
     """
     PCA analysis form
     """
-    file_name = FileField(label='File Path:')
-    pca_method = SelectField(label='method:', choices=[('method1', 'method1'), ('method2', 'method2')])
+    file_name = FileField(label='File Path:',
+                          validators=[FileRequired()]
+                          )
+    pca_method = SelectField(label='method:',
+                             choices=[('std', 'Standardised PCA'),
+                                      ('nstd', 'Non-Standardised PCA')]
+                             )
     submit = SubmitField(label='Start Analysis')
