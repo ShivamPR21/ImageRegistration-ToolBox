@@ -52,10 +52,10 @@ def home_page():
 
         return render_template('index.html', app_name='PCA App', form=form
                                , shrink="col-2", show_form='', show_result='show',
-                               pcs_path=['uploads/cache/pcs/pc_2.png',
-                                         'uploads/cache/pcs/pc_3.png',
-                                         'uploads/cache/pcs/pc_0.png',
-                                         'uploads/cache/pcs/pc_1.png'],
+                               pcs_path=['uploads/cache/pcs/pc_0.png',
+                                         'uploads/cache/pcs/pc_1.png',
+                                         'uploads/cache/pcs/pc_2.png',
+                                         'uploads/cache/pcs/pc_3.png'],
                                covar_path='uploads/cache/covar.png',
                                pcs_covar_path='uploads/cache/pc.png',
                                eig_val=img_proc.eigenval.ravel(),
@@ -66,7 +66,12 @@ def home_page():
             print(f'There was an error with creating a user: {err_msg}')
 
     return render_template('index.html', app_name='PCA App',
-                           form=form, shrink="col-2", pcs_path=['', '', '', ''])
+                           form=form, shrink="col-2", pcs_path=['', '', '', ''],
+                           covar_path='',
+                           pcs_covar_path='',
+                           eig_val=[0, 0, 0, 0],
+                           eig_vec=[0, 0, 0, 0]
+                           )
 
 
 if __name__ == '__main__':
