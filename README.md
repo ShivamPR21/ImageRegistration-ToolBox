@@ -1,15 +1,38 @@
-# PCA APP
-Principal Component Analysis for Satellite Imagery
+# Affine APP
+Web work for Affine transformation for the images.
+
+## Provided Transformations
+- Translation
+    - [1 0 t<sub>x</sub>]<br>
+      [0 1 t<sub>y</sub>]<br>
+      [0 0 1]
+      
+    
+- Rotation
+    - [cos sin 0]<br>
+      [-sin cos 0]<br>
+      [0 0 1]
+      
+- Skew
+    - [1 v<sub>x</sub> 0]<br>
+      [v<sub>y</sub> 1 0]<br>
+      [0 0 1]
+      
+- Scale
+    - [s<sub>x</sub> 0 0]<br>
+      [0 s<sub>x</sub> 0]<br>
+      [0 0 1]
 
 ## Process to Get the App Running
 
-**Note:** *We can run the project as an sltandalone electron app or simply as a web app. The process to get this running as a web app is give here.*
+**Note:** *We can run the project as a standalone electron app or simply as a web app. The process to get this running 
+as a web app is give here.*
 
 ### Get the toolbox and Install dependencies
 ```shell
 $ gh repo clone ShivamPR21/ImageRegistration-ToolBox
 $ cd ImageRegistration-ToolBox
-$ git checkout pca_app
+$ git checkout tr_app
 
 # Install Requirements
 $ pip3 install pandas matlab seaborn opencv-python Flask Flask-WTF
@@ -22,7 +45,7 @@ $ python app.py
 ```
 
 ### Open the app in your browser
-<p>Put the URL `http://localhost:5000` in your browser serach bar and hit Enter.</p>
+<p>Put the URL `http://localhost:5000` in your browser search bar and hit Enter.</p>
 
 ### Usage:
 1. Select the file Imagery.L-3
