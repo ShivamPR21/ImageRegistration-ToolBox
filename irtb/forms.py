@@ -3,7 +3,7 @@ from flask_wtf.file import FileField, FileRequired
 from wtforms import SelectField, FloatField, SubmitField
 
 
-class RegisterForm(FlaskForm):
+class TransForm(FlaskForm):
     """
     PCA analysis form
     """
@@ -11,25 +11,25 @@ class RegisterForm(FlaskForm):
                           validators=[FileRequired()]
                           )
     translation_x = FloatField(label='Translation X:',
-                               validators=[FileRequired()]
+                               # validators=[FileRequired()]
                                )
     translation_y = FloatField(label='Translation Y:',
-                               validators=[FileRequired()]
+                               # validators=[FileRequired()]
                                )
     rotation = FloatField(label='Rotation:',
-                          validators=[FileRequired()]
+                          # validators=[FileRequired()]
                           )
     scale_x = FloatField(label='Scale X:',
-                         validators=[FileRequired()]
+                         # validators=[FileRequired()]
                          )
     scale_y = FloatField(label='Scale Y:',
-                         validators=[FileRequired()]
+                         # validators=[FileRequired()]
                          )
     skew_x = FloatField(label='Skew X:',
-                        validators=[FileRequired()]
+                        # validators=[FileRequired()]
                         )
     skew_y = FloatField(label='Skew Y:',
-                        validators=[FileRequired()]
+                        # validators=[FileRequired()]
                         )
     interpolation_method = SelectField(label='Interpolation Method:',
                                        choices=[('nn', 'Nearest Neighbour'),

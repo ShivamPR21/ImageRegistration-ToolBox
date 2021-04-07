@@ -4,24 +4,20 @@ Web work for Affine transformation for the images.
 ## Provided Transformations
 - Translation
     - [1 0 t<sub>x</sub>]<br>
-      [0 1 t<sub>y</sub>]<br>
-      [0 0 1]
+      [0 1 t<sub>y</sub>]
       
     
 - Rotation
     - [cos sin 0]<br>
-      [-sin cos 0]<br>
-      [0 0 1]
+      [-sin cos 0]
       
 - Skew
     - [1 v<sub>x</sub> 0]<br>
-      [v<sub>y</sub> 1 0]<br>
-      [0 0 1]
+      [v<sub>y</sub> 1 0]
       
 - Scale
     - [s<sub>x</sub> 0 0]<br>
-      [0 s<sub>x</sub> 0]<br>
-      [0 0 1]
+      [0 s<sub>x</sub> 0]
 
 ## Process to Get the App Running
 
