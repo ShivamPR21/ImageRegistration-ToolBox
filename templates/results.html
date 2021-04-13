@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}
+    PCA Analysis
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-1 text-white">Spatial Affine Transformation Results</h1>
+    <body class="text-center">
+    <div class="container-fluid">
+        <div class="d-flex row flex-row justify-content-around">
+            <div class="col text-center">
+                <div class="card  d-inline-flex flex-column" style="width: 18rem;">
+                    <img class="card-img-top" src='{{ results['translation'] }}' alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Translation</h5>
+                        </div>
+                </div>
+            </div>
+            <div class="col text-center">
+                <div class="card  d-inline-flex flex-column" style="width: 18rem;">
+                    <img class="card-img-top" src='{{ results['rotation'] }}' alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Rotation</h5>
+                        </div>
+                </div>
+            </div>
+            <div class="col text-center">
+                <div class="card  d-inline-flex flex-column" style="width: 18rem;">
+                    <img class="card-img-top" src='{{ results['scale'] }}' alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Scale</h5>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex row flex-row justify-content-around mt-4">
+            <div class="col text-center">
+                <div class="card d-inline-flex flex-column" style="width: 18rem;">
+                    <img class="card-img-top" src='{{ results['skew'] }}' alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">skew</h5>
+                        </div>
+                </div>
+            </div>
+            <div class="col text-center">
+                <div class="card  d-inline-flex flex-column" style="width: 18rem;">
+                    <img class="card-img-top" src='{{ results['transformation'] }}' alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Final Affine Transformation</h5>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

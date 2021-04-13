@@ -48,3 +48,7 @@ $ python app.py
 2. Select Method for PCA analysis
 3. Hit Start Analysis
 4. Wait the Results window will load in few minutes based on the speed of your PC.
+
+### Results
+![transition1](docs/res1.png)
+![transition2](docs/res2.png)

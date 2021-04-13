@@ -40,9 +40,9 @@ def home_page():
                      'interp_method': form.interpolation_method.data}
 
         transform = TransformProc(upload_path, cache_dir, form_data)
-        results = transform.tranform()
-        print(results)
-        return render_template('index.html', app_name='Affine App', form=form)
+        res = transform.transform()
+
+        return render_template('results.html', app_name='Affine App', results=res)
 
     if form.errors != {}:  # If there are not errors from the validations
         for err_msg in form.errors.values():
@@ -50,6 +50,9 @@ def home_page():
 
     return render_template('index.html', app_name='Affine App', form=form)
 
+@app.route('/results', methods=['GET'])
+def results():
+    return render_template('results.html', app_name='Affine App')
 
 if __name__ == '__main__':
     app.run(debug=True)
