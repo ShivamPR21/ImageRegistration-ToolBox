@@ -22,7 +22,7 @@ $ python app.py
 ```
 
 ### Open the app in your browser
-<p>Put the URL `http://localhost:5000` in your browser serach bar and hit Enter.</p>
+Put the URL `http://localhost:5000` in your browser serach bar and hit Enter.
 
 ### Usage:
 1. Select the file Imagery.L-3
