@@ -29,3 +29,12 @@ $ python app.py
 2. Select Method for PCA analysis
 3. Hit Start Analysis
 4. Wait the Results window will load in few minutes based on the speed of your PC.
+
+### Input Method:
+![Input For PCA APP](static/assets/form.png)
+
+### Output:
+![Component 1](static/uploads/cache/pcs/pc_0.png)
+![Component 2](static/uploads/cache/pcs/pc_1.png)
+![Component 3](static/uploads/cache/pcs/pc_2.png)
+![Component 4](static/uploads/cache/pcs/pc_3.png)

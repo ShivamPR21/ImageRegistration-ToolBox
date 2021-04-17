@@ -6,6 +6,7 @@ import pandas as pd
 import seaborn as sns
 from matplotlib import pyplot as plt
 from pathlib import Path
+
 np.set_printoptions(precision=3)
 
 
@@ -183,4 +184,4 @@ class ImageryProc:
             self.img = np.load(os.path.join(self.cache, "imagery.npy"))
             return True
         except:
-            self.read_imagery()
+            return self.read_imagery()
