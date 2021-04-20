@@ -33,6 +33,9 @@ Put the URL `http://localhost:5000` in your browser serach bar and hit Enter.
 ### Input Method:
 ![Input For PCA APP](static/assets/form.png)
 
+### PCs as PGB combination
+![Input For PCA APP](static/assets/pcs_rgb.png)
+
 ### Output:
 ![Component 1](static/uploads/cache/pcs/pc_0.png)
 ![Component 2](static/uploads/cache/pcs/pc_1.png)

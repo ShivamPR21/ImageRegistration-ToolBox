@@ -194,6 +194,17 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm collapse {{ show_result|default('', true) }}"
+                 style="max-height: 500px;max-width: 500px;">
+                <div class="container">
+{#                    <button href="{{ url_for('rgb_viz') }}" type="button" class="btn btn-primary">#}
+{#                        Visualize RGB#}
+{#                    </button>#}
+                    <a class="btn btn-primary" href="{{ url_for('rgb_viz') }}" role="button">
+                        Visualize RGB
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
