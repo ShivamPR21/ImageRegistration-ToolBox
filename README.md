@@ -33,7 +33,7 @@ Put the URL `http://localhost:5000` in your browser serach bar and hit Enter.
 ### Input Method:
 ![Input For PCA APP](static/assets/form.png)
 
-### PCs as PGB combination
+### PCs as RGB combination
 ![Input For PCA APP](static/assets/pcs_rgb.png)
 
 ### Output:
