@@ -49,6 +49,8 @@ $ python app.py
 3. Hit Start Analysis
 4. Wait the Results window will load in few minutes based on the speed of your PC.
 
+### Input
+![Input](static/assets/input.png)
+
 ### Results
-![transition1](docs/res1.png)
-![transition2](docs/res2.png)
+![transformation result](static/assets/gui_results.png)

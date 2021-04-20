@@ -6,6 +6,8 @@ from werkzeug.utils import secure_filename
 from irtb.forms import TransForm
 from irtb.transform import TransformProc
 
+import numpy as np
+
 UPLOAD_FOLDER = '/uploads/data'
 # ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg', 'gif', 'L-3'}
 
@@ -42,7 +44,8 @@ def home_page():
         transform = TransformProc(upload_path, cache_dir, form_data)
         res = transform.transform()
 
-        return render_template('results.html', app_name='Affine App', results=res)
+        return render_template('results.html', app_name='Affine App', results=res,
+                               randoms=np.random.randint(1000000, size=5))
 
     if form.errors != {}:  # If there are not errors from the validations
         for err_msg in form.errors.values():
