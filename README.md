@@ -12,7 +12,7 @@ $ cd ImageRegistration-ToolBox
 $ git checkout pca_app
 
 # Install Requirements
-$ pip3 install pandas matlab seaborn opencv-python Flask Flask-WTF
+$ pip3 install pandas matplotlib seaborn opencv-python Flask Flask-WTF
 ```
 
 ### Run the Flask Server
