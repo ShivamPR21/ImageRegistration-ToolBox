@@ -39,9 +39,3 @@ Put the URL `http://localhost:5000` in your browser search bar and hit Enter.
 
 ### Output:
 ![Output 1](docs/results.png)
-
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="docs/irtb_main.png">
-    <source src="docs/gui-demo.mp4" type="video/mp4">
-  </video>
-</figure>
