@@ -1,5 +1,5 @@
-# PCA APP
-Principal Component Analysis for Satellite Imagery
+# IRTB APP
+Image registration toolbox for feature based image registration demonstration.
 
 ## Process to Get the App Running
 
@@ -13,7 +13,7 @@ $ cd ImageRegistration-ToolBox
 $ git checkout pca_app
 
 # Install Requirements
-$ pip3 install pandas matplotlib seaborn opencv-python Flask Flask-WTF
+$ pip3 install pandas matplotlib seaborn opencv-python opencv-contrib-python Flask Flask-WTF
 ```
 
 ### Run the Flask Server
@@ -26,10 +26,9 @@ $ python app.py
 Put the URL `http://localhost:5000` in your browser search bar and hit Enter.
 
 ### Usage:
-1. Select the file Imagery.L-3
-2. Select Method for PCA analysis
-3. Hit Start Analysis
-4. Wait the Results window will load in few minutes based on the speed of your PC.
+1. Select images to be registered.
+2. Confirm the loaded images and provide the parameters for registration.
+3. Hit register images and view the results.
 
 ### Load Images:
 ![Image details](docs/irtb_main.png)
