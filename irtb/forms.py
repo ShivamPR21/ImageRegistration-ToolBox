@@ -1,42 +1,57 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired
-from wtforms import SelectField, SubmitField
+from wtforms import SelectField, SubmitField, IntegerField, FloatField
 
 
-class RegisterForm(FlaskForm):
+class LoadImageForm(FlaskForm):
     """
     PCA analysis form
     """
-    file_name = FileField(label='File Path:',
+    source_fn = FileField(label='Source Image:',
                           validators=[FileRequired()]
                           )
-    pca_method = SelectField(label='method:',
-                             choices=[('std', 'Standardised PCA'),
-                                      ('nstd', 'Non-Standardised PCA')]
-                             )
-    submit = SubmitField(label='Start Analysis')
+    target_fn = FileField(label='Target Image:',
+                          validators=[FileRequired()]
+                          )
+    submit = SubmitField(label='Load Images')
 
 
-class RGBForm(FlaskForm):
+class IRTBform(FlaskForm):
     """
     RGB band PCA visualization
     """
-    r = SelectField(label='red band:',
-                    choices=[('pc_0.png', 'Principal Component 1'),
-                             ('pc_1.png', 'Principal Component 2'),
-                             ('pc_2.png', 'Principal Component 3'),
-                             ('pc_3.png', 'Principal Component 4')]
-                    )
-    g = SelectField(label='green band:',
-                    choices=[('pc_0.png', 'Principal Component 1'),
-                             ('pc_1.png', 'Principal Component 2'),
-                             ('pc_2.png', 'Principal Component 3'),
-                             ('pc_3.png', 'Principal Component 4')]
-                    )
-    b = SelectField(label='blue band:',
-                    choices=[('pc_0.png', 'Principal Component 1'),
-                             ('pc_1.png', 'Principal Component 2'),
-                             ('pc_2.png', 'Principal Component 3'),
-                             ('pc_3.png', 'Principal Component 4')]
-                    )
-    submit = SubmitField(label='Show Combination')
+    method = SelectField(label='Method:',
+                         choices=[('manual', 'Manual'),
+                                  ('feature', 'Feature Based'),
+                                  ('area', 'Area Based'),
+                                  ('NN', 'Conv Neural Networks')]
+                         )
+
+    feature = SelectField(label='Feature Extraction Method:',
+                          choices=[('sift', 'Scale-Invariant Feature Transform'),
+                                   ('surf', 'Speeded-Up Robust Features'),
+                                   ('brief', 'Binary Robust Independent Elementary Features'),
+                                   ('orb', 'Oriented FAST and Rotated BRIEF')]
+                          )
+
+    registrationModel = SelectField(label='Registration model:',
+                                    choices=[('homo', 'Homography'),
+                                             ('trans', 'Translation'),
+                                             ('rot', 'Rotation'),
+                                             ('euc', 'Euclidean')]
+                                    )
+
+    matchingMetric = SelectField(label='Matching Norm:',
+                                 choices=[('L1', 'L1 norm'),
+                                          ('L2', 'L2 norm'),
+                                          ('Hamming', 'Hamming'),
+                                          ('HammingLUT', 'LUT based Hamming')]
+                                 )
+
+    maxFeaturePts = IntegerField(label='Maximum feature points:',
+                                 default=40)
+
+    kpp = FloatField(label='Fraction of Matches to use:',
+                                 default=0.2)
+
+    submit = SubmitField(label='Register Images')

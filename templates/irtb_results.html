@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}
+    IRTB
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-1 text-white">Image Registration ToolBox</h1>
+    <body class="text-center">
+    <div class="container-fluid">
+        <div class="row d-flex flex-row justify-content-around">
+{#            <div class="col-sm d-inline-flex align-items-center">#}
+{#                <div class="d-flex flex-column align-items-center">#}
+{#                    <img src="{{ url_for('static', filename= feature_img ) }}?{{ randoms[0] }}"#}
+{#                         class="d-block w-100" alt="Slide 2" style="max-width: 100%; max-height: 100%;">#}
+{#                </div>#}
+{#            </div>#}
+            <div class="col-sm text-center d-inline-flex align-items-center">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="row text-white mt-3">
+                        <h3>
+                            Matched Features
+                        </h3>
+                    </div>
+                    <div class="row">
+                        <img src="{{ url_for('static', filename= feature_img ) }}?{{ randoms[0] }}"
+                             class="d-block w-100" alt="Slide 2" style="max-width: 100%; max-height: 100%;">
+                    </div>
+                    <div class="row d-flex flex-row justify-content-around align-items-end">
+                        <div class="col-sm">
+                            <div class="row text-white mt-3">
+                                <h3>
+                                    Target Image
+                                </h3>
+                            </div>
+                            <img src="{{ url_for('static', filename= tgt_img ) }}?{{ randoms[1] }}"
+                                 class="d-block w-100 d-inline-flex" alt="Slide 2" style="max-width: 100%;">
+                        </div>
+                        <div class="col-sm">
+                            <div class="row text-white mt-3">
+                                <h3>
+                                    Source Image
+                                </h3>
+                            </div>
+                            <img src="{{ url_for('static', filename= src_img ) }}?{{ randoms[2] }}"
+                                 class="d-block w-100 d-inline-flex" alt="Slide 2" style="max-width: 100%;">
+                        </div>
+                        <div class="col-sm">
+                            <div class="row text-white mt-3">
+                                <h3>
+                                    Aligned Image
+                                </h3>
+                            </div>
+                            <img src="{{ url_for('static', filename= alg_img ) }}?{{ randoms[3] }}"
+                                 class="d-block w-100 d-inline-flex" alt="Slide 2" style="max-width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+{% endblock %}

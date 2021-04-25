@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block title %}
+    IRTB
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-1 text-white">Image Registration ToolBox</h1>
+    <body class="text-center">
+    <div class="container-fluid">
+        <div class="row d-flex flex-row justify-content-around">
+            <div class="col-sm d-inline-flex align-items-center">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+
+                            <div class="d-flex flex-column align-items-center">
+                                {#                                <div class="d-flex flex-column"#}
+                                <img src="{{ url_for('static', filename= src_path ) }}?{{ randoms[0] }}"
+                                     class="d-block w-100 d-inline-flex" alt="Slide 1"
+                                     style="max-width: 100%; max-height: 100%;">
+
+                            </div>
+
+                            <div class="collapse show" id="collapseExample">
+                                <div class="card card-body">
+                                    <h2>
+                                        Source Image
+                                    </h2>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="carousel-item">
+
+                            <div class="d-flex flex-column align-items-center">
+                                <img src="{{ url_for('static', filename= tgt_path ) }}?{{ randoms[1] }}"
+                                     class="d-block w-100" alt="Slide 2" style="max-width: 100%; max-height: 100%;">
+                            </div>
+
+                            <div class="collapse show" id="collapseExample">
+                                <div class="card card-body">
+                                    <h2>
+                                        Target Image
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-sm text-center d-inline-flex align-items-center">
+                <form class="row d-flex flex-row g-3" action="/" method="POST" style="color:#ffffff;"
+                      enctype="multipart/form-data">
+                    {{ form.hidden_tag() }}
+                    <div class="row d-inline-flex">
+                        <h1 class="h3 mb-2 pt-5 font-weight-normal">
+                            Provide the Registration Details
+                        </h1>
+                    </div>
+
+                    {{ form.method.label() }}
+                    {{ form.method(class="form-control", placeholder="method") }}
+
+                    {{ form.feature.label() }}
+                    {{ form.feature(class="form-control", placeholder="Feature") }}
+
+                    {{ form.registrationModel.label() }}
+                    {{ form.registrationModel(class="form-control", placeholder="Registration model") }}
+
+                    {{ form.matchingMetric.label() }}
+                    {{ form.matchingMetric(class="form-control", placeholder="matchMet") }}
+
+                    {{ form.maxFeaturePts.label() }}
+                    {{ form.maxFeaturePts(class="form-control", placeholder="maxN") }}
+
+                    {{ form.kpp.label() }}
+                    {{ form.kpp(class="form-control", placeholder="kpp") }}
+
+                    <br>
+
+                    <div class="d-flex flex-row justify-content-center">
+                        {{ form.submit(class="btn btn-lg btn-block btn-primary d-inline-flex") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </body>
+{% endblock %}

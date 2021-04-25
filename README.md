@@ -3,7 +3,8 @@ Principal Component Analysis for Satellite Imagery
 
 ## Process to Get the App Running
 
-**Note:** *We can run the project as an sltandalone electron app or simply as a web app. The process to get this running as a web app is give here.*
+**Note:** *We can run the project as a standalone electron app or simply as a web app. 
+The process to get this running as a web app is give here:*
 
 ### Get the toolbox and Install dependencies
 ```shell
@@ -22,7 +23,7 @@ $ python app.py
 ```
 
 ### Open the app in your browser
-Put the URL `http://localhost:5000` in your browser serach bar and hit Enter.
+Put the URL `http://localhost:5000` in your browser search bar and hit Enter.
 
 ### Usage:
 1. Select the file Imagery.L-3
@@ -30,14 +31,17 @@ Put the URL `http://localhost:5000` in your browser serach bar and hit Enter.
 3. Hit Start Analysis
 4. Wait the Results window will load in few minutes based on the speed of your PC.
 
-### Input Method:
-![Input For PCA APP](static/assets/form.png)
+### Load Images:
+![Image details](docs/irtb_main.png)
 
-### PCs as RGB combination
-![Input For PCA APP](static/assets/pcs_rgb.png)
+### Provide Parameters and Details of Registration method
+![Details](docs/registration.png)
 
 ### Output:
-![Component 1](static/uploads/cache/pcs/pc_0.png)
-![Component 2](static/uploads/cache/pcs/pc_1.png)
-![Component 3](static/uploads/cache/pcs/pc_2.png)
-![Component 4](static/uploads/cache/pcs/pc_3.png)
+![Output 1](docs/results.png)
+
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true" poster="docs/irtb_main.png">
+    <source src="docs/gui-demo.mp4" type="video/mp4">
+  </video>
+</figure>
