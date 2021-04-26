@@ -25,6 +25,10 @@ $ python app.py
 ### Open the app in your browser
 Put the URL `http://localhost:5000` in your browser search bar and hit Enter.
 
+```
+The Report and Presentation are kept in the **docs** folder.
+```
+
 ### Usage:
 1. Select images to be registered.
 2. Confirm the loaded images and provide the parameters for registration.
