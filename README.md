@@ -10,7 +10,7 @@ The process to get this running as a web app is give here:*
 ```shell
 $ gh repo clone ShivamPR21/ImageRegistration-ToolBox
 $ cd ImageRegistration-ToolBox
-$ git checkout pca_app
+$ git checkout main
 
 # Install Requirements
 $ pip3 install pandas matplotlib seaborn opencv-python opencv-contrib-python Flask Flask-WTF
