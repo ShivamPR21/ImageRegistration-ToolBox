@@ -30,14 +30,6 @@ def home_page():
         upload_path = os.path.join(data_dir, secure_filename(form.file_name.data.filename))
         print('upload path ', upload_path)
         form.file_name.data.save(upload_path)
-        form_data = {'t_x': form.translation_x.data,
-                     't_y': form.translation_y.data,
-                     'rot': form.rotation.data,
-                     'scale_x': form.scale_x.data,
-                     'scale_y': form.scale_y.data,
-                     'skew_x': form.skew_x.data,
-                     'skew_y': form.skew_y.data,
-                     'interp_method': form.interpolation_method.data}
 
         transform = TransformProc(upload_path, cache_dir, form_data)
         res = transform.transform()
