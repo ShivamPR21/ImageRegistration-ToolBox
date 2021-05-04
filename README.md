@@ -31,7 +31,7 @@ $ cd ImageRegistration-ToolBox
 $ git checkout tr_app
 
 # Install Requirements
-$ pip3 install pandas matplotlib seaborn opencv-python Flask Flask-WTF
+$ pip3 install pandas matplotlib seaborn opencv-python opencv-contrib-python Flask Flask-WTF
 ```
 
 ### Run the Flask Server
