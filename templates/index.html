@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block title %}
-    PCA Analysis
+    Contrast Stretching
 {% endblock %}
 
 {% block content %}
-    <h1 class="text-center mt-1 text-white">Spatial Affine Transformation</h1>
+    <h1 class="text-center mt-1 text-white">Image Contrast Stretching</h1>
     <body class="text-center">
     <div class="container">
         <div class="row d-flex flex-row justify-content-center">
             <div class="col-sm">
                 <div class="row d-flex align-items-center justify-content-center">
                     <div class="col-sm d-flex flex-row justify-content-center">
-                        <img src="{{ url_for('static', filename='assets/geometric-tr-img.png') }}"
+                        <img src="{{ url_for('static', filename='assets/Computer-Vision.jpg') }}"
                              class="img-fluid d-inline-flex"
                              alt="Didn't found"
                              style="width: 40%; height: 40%;"
@@ -25,40 +25,15 @@
                             {{ form.hidden_tag() }}
                             <div class="row d-inline-flex">
                                 <h1 class="h3 mb-2 pt-5 font-weight-normal">
-                                    Affine Transformation Parameters
+                                    Provide the Image Paths and Methods for Contrast Stretching
                                 </h1>
                             </div>
 
-                            <div class="col d-inline-flex flex-column">
-                                {{ form.file_name.label() }}
-                                {{ form.file_name(class="form-control", placeholder="file_name") }}
+                            {{ form.file_name.label() }}
+                            {{ form.file_name(class="form-control", placeholder="File") }}
 
-                                {{ form.translation_x.label() }}
-                                {{ form.translation_x(class="form-control", placeholder="Translation X") }}
-                                {{ form.translation_y.label() }}
-                                {{ form.translation_y(class="form-control", placeholder="Translation Y") }}
-                            </div>
-
-                            <div class="col d-inline-flex flex-column">
-                                {{ form.rotation.label() }}
-                                {{ form.rotation(class="form-control", placeholder="Rotation") }}
-
-                                {{ form.scale_x.label() }}
-                                {{ form.scale_x(class="form-control", placeholder="Scale X") }}
-                                {{ form.scale_y.label() }}
-                                {{ form.scale_y(class="form-control", placeholder="Scale Y") }}
-                            </div>
-
-                            <div class="col d-inline-flex flex-column">
-                                {{ form.skew_x.label() }}
-                                {{ form.skew_x(class="form-control", placeholder="Skew X") }}
-
-                                {{ form.skew_y.label() }}
-                                {{ form.skew_y(class="form-control", placeholder="Skew Y") }}
-
-                                {{ form.interpolation_method.label() }}
-                                {{ form.interpolation_method(class="form-control", placeholder="Iinterpolation") }}
-                            </div>
+                            {{ form.str_method.label() }}
+                            {{ form.str_method(class="form-control", placeholder="Method") }}
 
                             <br>
 
@@ -70,8 +45,27 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm">
+                <div class="row d-flex justify-content-center">
+                    <div class="card" style="max-width: 75%;">
+                        <img src="{{ url_for('static', filename= original_img|default('assets/pca.jpg') ) }}?{{ randoms[0] }}"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Original Image</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center mt-4">
+                    <div class="card" style="max-width: 75%;">
+                        <img src="{{ url_for('static', filename= final_img|default('assets/pca.jpg') ) }}?{{ randoms[1] }}"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">After Stretching</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
     </body>
 {% endblock %}

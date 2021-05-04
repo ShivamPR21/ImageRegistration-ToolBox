@@ -1,23 +1,10 @@
-# Affine APP
-Web work for Affine transformation for the images.
+# Image Contrast Stretching APP
+The work applies contrast stretching on the images.
 
-## Provided Transformations
-- Translation
-    - [1 0 t<sub>x</sub>]<br>
-      [0 1 t<sub>y</sub>]
-      
-    
-- Rotation
-    - [cos sin 0]<br>
-      [-sin cos 0]
-      
-- Skew
-    - [1 v<sub>x</sub> 0]<br>
-      [v<sub>y</sub> 1 0]
-      
-- Scale
-    - [s<sub>x</sub> 0 0]<br>
-      [0 s<sub>x</sub> 0]
+## Provided Methods
+- Linear Stretching
+- Histogram Equalization
+- Gaussian Stretching
 
 ## Process to Get the App Running
 
@@ -28,10 +15,10 @@ as a web app is give here.*
 ```shell
 $ gh repo clone ShivamPR21/ImageRegistration-ToolBox
 $ cd ImageRegistration-ToolBox
-$ git checkout tr_app
+$ git checkout str_app
 
 # Install Requirements
-$ pip3 install pandas matlab seaborn opencv-python Flask Flask-WTF
+$ pip3 install pandas matplotlib seaborn opencv-python opencv-contrib-python Flask Flask-WTF
 ```
 
 ### Run the Flask Server
@@ -44,11 +31,17 @@ $ python app.py
 <p>Put the URL `http://localhost:5000` in your browser search bar and hit Enter.</p>
 
 ### Usage:
-1. Select the file Imagery.L-3
-2. Select Method for PCA analysis
-3. Hit Start Analysis
+1. Select the file RGB images supported formats `png, jpg, jpeg`.
+2. Select Method for Contrast stretching
+3. Hit `Stretch Contrast`
 4. Wait the Results window will load in few minutes based on the speed of your PC.
 
 ### Results
-![transition1](docs/res1.png)
-![transition2](docs/res2.png)
+#### Linear stretch
+![transition1](docs/linear.png)
+
+#### Histogram Equalization
+![transition2](docs/histogram.png)
+
+#### Gaussian Stretch
+![transition2](docs/gaussian.png)

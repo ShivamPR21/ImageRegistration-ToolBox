@@ -30,6 +30,10 @@ class TransformProc:
         self.T_s = None
 
     def init_transforms(self):
+        """
+
+        :return:
+        """
         self.T_t = np.float32(np.concatenate((np.eye(2), [
             [self.params['t_x']],
             [self.params['t_y']]

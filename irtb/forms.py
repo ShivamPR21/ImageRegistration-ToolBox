@@ -10,10 +10,10 @@ class TransForm(FlaskForm):
     file_name = FileField(label='File Path:',
                           validators=[FileRequired()]
                           )
-    interpolation_method = SelectField(label='Stretch Method:',
-                                       choices=[('linear', 'Linear Stretch'),
-                                                ('hist', 'Histogram Equalization'),
-                                                ('gauss', 'Gaussian Stretch')]
-                                       )
+    str_method = SelectField(label='Stretch Method:',
+                             choices=[('linear', 'Linear Stretch'),
+                                      ('hist', 'Histogram Equalization'),
+                                      ('gauss', 'Gaussian Stretch')]
+                             )
 
     submit = SubmitField(label='Stretch Contrast')
